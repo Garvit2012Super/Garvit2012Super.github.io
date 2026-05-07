@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 4 - Investing Basics</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0b1a2b;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 60px;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      color: #8ec5ff;
+      font-size: 34px;
+      font-weight: bold;
+    }
+
+    .lesson-title {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    .content {
+      padding: 40px 60px;
+      max-width: 900px;
+    }
+
+    h1 {
+      color: #8ec5ff;
+    }
+
+    p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .image-box {
+      margin: 20px 0 30px;
+      height: 260px;
+      background: #12263a;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .question {
+      margin-top: 25px;
+      padding: 15px;
+      background: #12263a;
+      border-left: 4px solid #8ec5ff;
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin: 6px 0;
+      color: #ccc;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #8ec5ff;
+      border: none;
+      color: #0b1a2b;
+      cursor: pointer;
+    }
+
+    .finish-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: transparent;
+      border: 1px solid #8ec5ff;
+      color: #8ec5ff;
+      cursor: pointer;
+      display: none;
+    }
+
+    .finish-btn:hover {
+      background: #8ec5ff;
+      color: #0b1a2b;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #8ec5ff;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AERSK</div>
+  <div class="lesson-title">Lesson 4: Investing Basics</div>
+</header>
+
+<div class="content">
+
+  <h1>What is Investing?</h1>
+
+  <p>
+    Investing is the process of putting your money into assets like stocks, bonds, or funds
+    with the goal of growing your wealth over time. Instead of just saving money, investing
+    allows your money to work for you and potentially increase in value.
+  </p>
+
+  <div class="image-box">
+    <img src="Lesson4image1.jpg" alt="Investing concept">
+  </div>
+
+  <h1>What is the Stock Market?</h1>
+
+  <p>
+    The stock market is a place where people buy and sell shares of companies. When you buy
+    a share, you own a small part of that company. The value of shares can go up or down
+    depending on the company’s performance and the economy.
+  </p>
+
+  <div class="image-box">
+    <img src="Lesson4image2.jpg" alt="Stock market">
+  </div>
+
+  <div class="question">
+    <h3>1. What is investing mainly used for?</h3>
+    <label><input type="radio" name="q1" value="wrong"> Spending money quickly</label>
+    <label><input type="radio" name="q1" value="correct"> Growing wealth over time</label>
+    <label><input type="radio" name="q1" value="wrong"> Losing money</label>
+  </div>
+
+  <div class="question">
+    <h3>2. What is the stock market?</h3>
+    <label><input type="radio" name="q2" value="correct"> A place to buy and sell company shares</label>
+    <label><input type="radio" name="q2" value="wrong"> A savings account</label>
+    <label><input type="radio" name="q2" value="wrong"> A bank loan system</label>
+  </div>
+
+  <div class="question">
+    <h3>3. What do you own when you buy a share?</h3>
+    <label><input type="radio" name="q3" value="correct"> A small part of a company</label>
+    <label><input type="radio" name="q3" value="wrong"> The whole company</label>
+    <label><input type="radio" name="q3" value="wrong"> A loan</label>
+  </div>
+
+  <div class="question">
+    <h3>4. What can happen to stock prices?</h3>
+    <label><input type="radio" name="q4" value="correct"> They can go up or down</label>
+    <label><input type="radio" name="q4" value="wrong"> They only go up</label>
+    <label><input type="radio" name="q4" value="wrong"> They never change</label>
+  </div>
+
+  <button class="submit-btn" onclick="checkAnswers()">Submit Answers</button>
+
+  <div id="result" class="result"></div>
+
+  <button id="finishBtn" class="finish-btn" onclick="finishLesson()">
+    Finish Lesson
+  </button>
+
+</div>
+
+<script>
+function checkAnswers() {
+  let score = 0;
+
+  const questions = ["q1", "q2", "q3", "q4"];
+
+  questions.forEach(q => {
+    const selected = document.querySelector('input[name="' + q + '"]:checked');
+    if (selected && selected.value === "correct") {
+      score++;
+    }
+  });
+
+  document.getElementById("result").innerText =
+    "Your score: " + score + " / 4";
+
+  document.getElementById("finishBtn").style.display = "inline-block";
+}
+
+function finishLesson() {
+  localStorage.setItem("lesson4", "done");
+  window.location.href = "learn.html";
+}
+</script>
+
+</body>
+</html>

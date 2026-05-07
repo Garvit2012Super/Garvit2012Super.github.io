@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 1 - Financial Literacy</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0b1a2b;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 60px;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      color: #8ec5ff;
+      font-size: 34px;
+      font-weight: bold;
+    }
+
+    .lesson-title {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    .content {
+      padding: 40px 60px;
+      max-width: 900px;
+    }
+
+    h1 {
+      color: #8ec5ff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .image-placeholder {
+      margin-top: 25px;
+      height: 250px;
+      background: #12263a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .image-placeholder img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .questions {
+      margin-top: 40px;
+    }
+
+    .question {
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #12263a;
+      border-left: 4px solid #8ec5ff;
+    }
+
+    input {
+      margin-top: 10px;
+      padding: 8px;
+      width: 100%;
+      background: #0b1a2b;
+      border: 1px solid #333;
+      color: white;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #8ec5ff;
+      border: none;
+      color: #0b1a2b;
+      cursor: pointer;
+    }
+
+    .finish-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: transparent;
+      border: 1px solid #8ec5ff;
+      color: #8ec5ff;
+      cursor: pointer;
+      display: none;
+    }
+
+    .finish-btn:hover {
+      background: #8ec5ff;
+      color: #0b1a2b;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #8ec5ff;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AERSK</div>
+  <div class="lesson-title">Lesson 1: What is Financial Literacy?</div>
+</header>
+
+<div class="content">
+
+  <h1>What is Financial Literacy?</h1>
+
+  <p>
+    Financial literacy means understanding how money works. It includes knowing how to earn, save, spend, and invest money wisely. Being financially literate helps you make smart decisions and avoid common money mistakes.
+  </p>
+
+  <p>
+    It is an essential life skill that helps you manage your future, plan for goals, and stay out of debt.
+  </p>
+
+  <div class="image-placeholder">
+    <img src="Lesson1image.jpg">
+  </div>
+
+  <div class="questions">
+
+    <h2>Answer these questions to complete the lesson:</h2>
+
+    <div class="question">
+      <p>1. What does financial literacy help you manage?</p>
+      <input id="q1" type="text">
+    </div>
+
+    <div class="question">
+      <p>2. Name one key part of financial literacy.</p>
+      <input id="q2" type="text">
+    </div>
+
+    <div class="question">
+      <p>3. Give 3 reasons why financial literacy is important:</p>
+      <input id="q3" type="text">
+    </div>
+
+    <button class="submit-btn" onclick="checkAnswers()">Submit Answers</button>
+
+    <div id="result" class="result"></div>
+
+    <button id="finishBtn" class="finish-btn" onclick="completeLesson()">
+      Finish Lesson
+    </button>
+
+  </div>
+</div>
+
+<script>
+function checkAnswers() {
+  let score = 0;
+
+  const a1 = document.getElementById("q1").value.toLowerCase();
+  const a2 = document.getElementById("q2").value.toLowerCase();
+  const a3 = document.getElementById("q3").value.toLowerCase();
+
+  if (
+    a1.includes("money") ||
+    a1.includes("finance") ||
+    a1.includes("budget") ||
+    a1.includes("spending")
+  ) score++;
+
+  if (
+    a2.includes("save") ||
+    a2.includes("invest") ||
+    a2.includes("budget") ||
+    a2.includes("earn")
+  ) score++;
+
+  let keywords = 0;
+  if (a3.includes("future")) keywords++;
+  if (a3.includes("debt")) keywords++;
+  if (a3.includes("goal")) keywords++;
+  if (a3.includes("important")) keywords++;
+
+  if (keywords >= 2) score++;
+
+  document.getElementById("result").innerText =
+    "Your score: " + score + " / 3";
+
+  document.getElementById("finishBtn").style.display = "inline-block";
+}
+
+function completeLesson() {
+  localStorage.setItem("lesson1", "done");
+  window.location.href = "learn.html";
+}
+</script>
+
+</body>
+</html>

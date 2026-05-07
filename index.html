@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AERSK - Financial Literacy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #0b1a2b;
+      color: #e6edf5;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #8ec5ff;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #8ec5ff;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 60px;
+      gap: 40px;
+    }
+
+    .hero-text {
+      max-width: 550px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #8ec5ff;
+    }
+
+    .hero p {
+      color: #9fb3c8;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .btn-primary {
+      padding: 14px 28px;
+      background: #8ec5ff;
+      border: none;
+      border-radius: 30px;
+      color: #0b1a2b;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.85;
+    }
+
+    .hero-art {
+      width: 420px;
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #0f2238;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 40px 60px 80px;
+    }
+
+    .card {
+      background: #0f2238;
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .icon {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #9fb3c8;
+      font-size: 14px;
+    }
+
+    @media(max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 500px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">AERSK</div>
+
+    <nav>
+      <a href="learn.html">Learn</a>
+      <a href="Resources.html">Resources</a>
+      <a href="Aboutus.html">About Us</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>
+        MASTER MONEY.<br/>
+        <span>BUILD YOUR FUTURE.</span>
+      </h1>
+
+      <p>
+        Helps you excel in Investing, Budgeting and Saving for FREE.
+      </p>
+
+      <a href="learn.html" class="btn-primary">
+        Start Learning
+      </a>
+    </div>
+
+    <div class="hero-art">
+      <img src="DDIMAGE.jpg" class="hero-img" alt="Hero Image">
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <div class="icon">💼</div>
+      <h3>Budgeting</h3>
+      <p>Track your Money</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🐷</div>
+      <h3>Saving</h3>
+      <p>Learn to manage your money</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3>Investing</h3>
+      <p>Make your money grow</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>Earning</h3>
+      <p>Explore Side hustles & internships</p>
+    </div>
+  </section>
+
+</body>
+</html>

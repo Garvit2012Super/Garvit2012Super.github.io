@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 5 - Side Hustles</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: #0b1a2b;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 60px;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      color: #8ec5ff;
+      font-size: 34px;
+      font-weight: bold;
+    }
+
+    .lesson-title {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    .content {
+      padding: 40px 60px;
+      max-width: 900px;
+    }
+
+    h1 {
+      color: #8ec5ff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .image-box {
+      margin: 25px 0;
+      height: 370px;
+      background: #12263a;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #8ec5ff;
+      border: none;
+      color: #0b1a2b;
+      cursor: pointer;
+    }
+
+    .finish-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: 1px solid #8ec5ff;
+      background: transparent;
+      color: #8ec5ff;
+      cursor: pointer;
+      display: none;
+    }
+
+    .finish-btn:hover {
+      background: #8ec5ff;
+      color: #0b1a2b;
+    }
+
+    .result {
+      margin-top: 15px;
+      color: #8ec5ff;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AERSK</div>
+  <div class="lesson-title">Lesson 5: Side Hustles</div>
+</header>
+
+<div class="content">
+
+  <h1>Side Hustles 101</h1>
+
+  <p>
+    A side hustle is any way of earning extra money outside of your main job or studies.
+    It can include selling products online, freelancing, tutoring, or creating digital content.
+    Side hustles help you build financial independence and develop real-world skills such as creativity,
+    communication, and time management.
+  </p>
+
+  <div class="image-box">
+    <img src="Lesson5image.webp" alt="Side Hustles">
+  </div>
+
+  <p>
+    In today’s digital economy, opportunities are everywhere. Many successful businesses started as small side projects.
+    The key is consistency, patience, and learning from experience. Even small earnings help you understand how money works in real life.
+  </p>
+
+  <div class="result" id="result"></div>
+
+  <button class="submit-btn" onclick="completeLesson()">
+    Mark as Completed
+  </button>
+
+  <button id="finishBtn" class="finish-btn" onclick="finishLesson()">
+    Finish Lesson
+  </button>
+
+</div>
+
+<script>
+function completeLesson() {
+  document.getElementById("result").innerText = "Lesson completed successfully!";
+  document.getElementById("finishBtn").style.display = "inline-block";
+}
+
+function finishLesson() {
+  localStorage.setItem("lesson5", "done");
+  window.location.href = "learn.html";
+}
+</script>
+
+</body>
+</html>
